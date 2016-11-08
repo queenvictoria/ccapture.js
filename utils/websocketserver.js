@@ -23,8 +23,8 @@ wss.on('connection', function connection(ws) {
 
     base64Data = data.toString('base64');
 
-    // Allows for up to 1 hour of encoded data at 25fps.
-    var filename = ("00000" + frame).slice(-5)+".png";
+    // Allows for up to 10 hours of encoded data at 25fps.
+    var filename = ("000000" + frame).slice(-5)+".png";
 
     fs.writeFile(directory + "/" + filename, base64Data, 'base64', function(err) {
         if ( err ) console.log(err);
