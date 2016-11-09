@@ -383,8 +383,6 @@ function CCWebsocketServerEncoder( settings ) {
   this.type = 'image/png';
   this.extension = '.png';
   this.fileExtension = this.extension;
-  this.stream = null;
-  this.mediaRecorder = null;
   this.chunks = [];
   this.count = 0;
 
@@ -414,8 +412,6 @@ CCWebsocketServerEncoder.prototype.add = function( canvas ) {
 }
 
 CCWebsocketServerEncoder.prototype.save = function( callback ) {
-  // End the stream
-  this.mediaRecorder.stop();
   // Close the socket
   this.encoder.close()
 
