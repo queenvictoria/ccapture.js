@@ -710,6 +710,8 @@ function CCapture( settings ) {
 		window.Date.prototype.getTime = function(){
 			return _time;
 		};
+
+		window.Date._now = window.Date.now;
 		window.Date.now = function() {
 			return _time;
 		};
